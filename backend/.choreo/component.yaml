@@ -9,4 +9,4 @@ endpoints:
   - name: "REST API"
     port: 8000
     protocol: http
-    visibility: Public
+    visibility: public
