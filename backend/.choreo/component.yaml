@@ -1,8 +1,12 @@
+name: "django-react-backend"
 version: 0.1
-
+type: service
+runtime: python
+source:
+  type: git
+  url: "https://github.com/psatomas/django-react-tutorial"
 endpoints:
- - name: "REST API" 
-   port: 8000
-   type: REST
-   networkVisibility: Public
-   context: /
+  - name: "REST API"
+    port: 8000
+    protocol: http
+    visibility: public
