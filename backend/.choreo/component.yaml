@@ -1,4 +1,4 @@
-name: "django-backend"
+name: "backend"
 version: 0.1
 type: service
 source:
