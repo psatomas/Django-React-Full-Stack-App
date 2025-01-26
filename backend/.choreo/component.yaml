@@ -4,9 +4,9 @@ type: service
 runtime: python
 source:
   type: git
-  url: "https://github.com/psatomas/django-react-tutorial"
+  url: "https://github.com/psatomas/Django-React-Full-Stack-App"
 endpoints:
   - name: "REST API"
     port: 8000
     protocol: http
-    visibility: public
+    visibility: Public
