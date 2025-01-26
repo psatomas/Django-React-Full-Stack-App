@@ -1,19 +1,8 @@
-name: "backend"
-type: service
-source:
-  type: git
-  url: "https://github.com/psatomas/Django-React-Full-Stack-App"
-  subDirectory: "backend"
-runtime: python
-build:
-  commands:
-    install:
-      - pip install -r requirements.txt
-    start:
-      - python manage.py migrate
-      - python manage.py runserver 0.0.0.0:8000
+version: 0.1
+
 endpoints:
-  - name: "Django API"
+  - name: "REST API"
     port: 8000
-    protocol: http
-    visibility: public
+    type: REST
+    networkVisibility: Public
+    context: /
