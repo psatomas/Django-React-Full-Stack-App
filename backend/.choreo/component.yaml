@@ -1,3 +1,10 @@
+name: "django-react-backend"
+version: 0.1
+type: service
+runtime: python
+source:
+  type: git
+  url: "https://github.com/psatomas/Django-React-Full-Stack-App/tree/main/backend"
 endpoints:
   - name: "REST API"
     port: 8000
