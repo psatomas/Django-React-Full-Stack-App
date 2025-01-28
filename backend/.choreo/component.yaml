@@ -1,8 +1,22 @@
-version: 0.1
-
-endpoints:
-  - name: "REST API"
-    port: 8000
-    type: REST
-    networkVisibility: Public
-    context: /
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: django-react-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: django-react-app
+  template:
+    metadata:
+      labels:
+        app: django-react-app
+    spec:
+      containers:
+        - name: backend
+          image: backend_image:latest
+          ports:
+            - containerPort: 8000
+          envFrom:
+            - secretRef:
+                name: database-credentials
