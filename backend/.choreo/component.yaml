@@ -17,6 +17,3 @@ spec:
           image: backend_image:latest
           ports:
             - containerPort: 8000
-          envFrom:
-            - secretRef:
-                name: database-credentials
