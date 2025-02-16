@@ -1,0 +1,20 @@
+# Use an official Python image
+FROM python:3.13.0
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy the project files
+COPY . .
+
+# Install dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Run migrations and collect static files
+RUN python manage.py migrate && python manage.py collectstatic --noinput
+
+# Expose port 8000 for Django
+EXPOSE 8000
+
+# Run Django server
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
